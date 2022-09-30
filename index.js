@@ -21,17 +21,9 @@ const sortBy = (arr, type, key) => {
     } else if (type === 'desc' && key === 'age') {
         copy.sort((a,b) => b.age - a.age)
     } else if (type === 'asc' && key === 'name'){
-        copy.sort( (a,b) => {
-            if(a.name < b.name) {
-                return -1
-            }
-        })
+        copy.sort( (a,b) => a.name < b.name && -1)
     } else if (type === 'desc' && key === 'name'){
-        copy.sort( (a,b) => {
-            if(a.name > b.name){
-                return -1
-            }
-        })
+        copy.sort( (a,b) => a.name > b.name && -1)
     }
 
     return copy
